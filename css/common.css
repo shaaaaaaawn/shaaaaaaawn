@@ -1,0 +1,122 @@
+/* Fullscreen and base layout */
+html, 
+body, 
+.xr-canvas {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.xr-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -2;
+}
+
+body {
+    z-index: 1;
+}
+
+/* Description box at the bottom with blur */
+#description {
+    pointer-events: auto;
+    font-family: sans-serif;
+    padding: 1em;
+    background-color: rgba(255, 255, 255, 0.7);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}
+
+#description > * {
+    pointer-events: none;
+}
+
+/* Button styling */
+button {
+    font-size: 16px;
+}
+
+#go-button {
+    margin: 20px;
+    padding: 12px 20px;
+    background: #00ffff;
+    border: none;
+    border-radius: 5px;
+    color: black;
+    font-weight: bold;
+    box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+    transition: transform 0.2s ease;
+}
+
+#go-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #00ffff, 0 0 30px #00ffff;
+}
+
+/* Top text box */
+.text-box {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    color: white;
+    background: rgba(27, 55, 55, 0.75);
+    outline: 1px solid rgba(127, 255, 255, 0.75);
+    border: 0px;
+    padding: 5px 10px;
+    margin: 0px 0 0 -50px;
+    font-size: 0.8em;
+}
+
+/* Centered messages */
+.common-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+}
+
+/* Fade-in animation for any elements */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 2s ease-in forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Floating UI card (example class you can use) */
+.floating-ui {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 1em;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #00ffff;
+}
+
+/* Optional class for labels inside VR */
+.vr-label {
+    color: #fff;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 4px 8px;
+    font-size: 14px;
+    border-radius: 4px;
+    font-weight: bold;
+    text-shadow: 0 0 3px #000;
+}
